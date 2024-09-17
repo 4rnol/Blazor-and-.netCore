@@ -8,4 +8,10 @@
         public ICollection<Tarea> Tareas { get; set; }
     }
 
+    public enum PrioridadNombre
+    {
+        Baja,
+        Media,
+        Alta
+    }
 }

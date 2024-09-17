@@ -9,9 +9,15 @@ namespace ClientNetforemost.Components.Pages
 
         private List<Entidad.Usuario> usuarios = new List<Entidad.Usuario>();
         private Entidad.Usuario usuario = new Entidad.Usuario();
+        private Entidad.Usuario crear = new Entidad.Usuario();
         private bool cargando = true;
 
         protected override async Task OnInitializedAsync()
+        {
+            await CargarUsuarios();
+        }
+
+        private async Task CargarUsuarios()
         {
             usuarios = await IUsuarioServicio.ObtenerUsuariosAsync();
             cargando = false;
@@ -22,10 +28,16 @@ namespace ClientNetforemost.Components.Pages
             usuario = usr;
         }
 
-        private void EnviarUsuarioEditado()
+        private async Task EnviarUsuarioEditado()
         {
-            IUsuarioServicio.EditarUsuario(usuario);
+            await IUsuarioServicio.EditarUsuario(usuario);
+            await CargarUsuarios(); 
+        }
 
+        private async Task EnviarUsuarioCreado()
+        {
+            await IUsuarioServicio.CrearUsuario(crear);
+            await CargarUsuarios();
         }
     }
 }

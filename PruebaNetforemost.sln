@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entidad", "Entities\Entidad
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientNetforemost", "ClientNetforemost\ClientNetforemost.csproj", "{BB5F1D2B-4277-4D66-94B2-4EDAEDEA6326}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUnitarios", "TestUnitarios\TestUnitarios.csproj", "{D6DFB361-5BFD-49DA-9B9B-B2586E76F468}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{BB5F1D2B-4277-4D66-94B2-4EDAEDEA6326}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB5F1D2B-4277-4D66-94B2-4EDAEDEA6326}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB5F1D2B-4277-4D66-94B2-4EDAEDEA6326}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6DFB361-5BFD-49DA-9B9B-B2586E76F468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6DFB361-5BFD-49DA-9B9B-B2586E76F468}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6DFB361-5BFD-49DA-9B9B-B2586E76F468}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6DFB361-5BFD-49DA-9B9B-B2586E76F468}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

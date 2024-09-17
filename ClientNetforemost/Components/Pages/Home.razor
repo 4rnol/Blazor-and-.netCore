@@ -50,28 +50,30 @@ else
                 <h5 class="modal-title" id="exampleModalLabel">Crear Usuario</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <div class="mb-3">
-                    <label for="name" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="name" placeholder="juan">
+            <EditForm method="post" OnValidSubmit="EnviarUsuarioCreado" Model="typeof(Entidad.Usuario)">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="name" @bind-value="@crear.Nombre" placeholder="juan" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="lastname" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="lastname" @bind-value="@crear.Apellido" placeholder="perez" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo</label>
+                        <input type="email" class="form-control" id="email" @bind-value="@crear.Correo" placeholder="aa@example.com" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="cell" class="form-label">Telefono</label>
+                        <input type="number" class="form-control" id="cell" @bind-value="@crear.Telefono" placeholder="74964655" required>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="lastname" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" id="lastname" placeholder="perez">
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary">Crear</button>
                 </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Correo</label>
-                    <input type="email" class="form-control" id="email" placeholder="aa@example.com">
-                </div>
-                <div class="mb-3">
-                    <label for="cell" class="form-label">Telefono</label>
-                    <input type="number" class="form-control" id="cell" placeholder="74964655">
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Crear</button>
-            </div>
+            </EditForm>
         </div>
     </div>
 </div>
@@ -89,19 +91,19 @@ else
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="Nombre" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="Nombre" @bind="@usuario.Nombre" placeholder="juan">
+                        <input type="text" class="form-control" id="Nombre" @bind="@usuario.Nombre" placeholder="juan" required>
                     </div>
                     <div class="mb-3">
                         <label for="Apellido" class="form-label">Apellido</label>
-                        <input type="text" class="form-control" id="Apellido" @bind="@usuario.Apellido" placeholder="perez">
+                        <input type="text" class="form-control" id="Apellido" @bind="@usuario.Apellido" placeholder="perez" required>
                     </div>
                     <div class="mb-3">
                         <label for="Correo" class="form-label">Correo</label>
-                        <input type="email" class="form-control" id="Correo" @bind="@usuario.Correo" placeholder="aa@example.com">
+                        <input type="email" class="form-control" id="Correo" @bind="@usuario.Correo" placeholder="aa@example.com" required>
                     </div>
                     <div class="mb-3">
                         <label for="Telefono" class="form-label">Telefono</label>
-                        <input type="number" class="form-control" id="Telefono" @bind="@usuario.Telefono" placeholder="74964655">
+                        <input type="number" class="form-control" id="Telefono" @bind="@usuario.Telefono" placeholder="74964655" required>
                     </div>
                 </div>
                 <div class="modal-footer">

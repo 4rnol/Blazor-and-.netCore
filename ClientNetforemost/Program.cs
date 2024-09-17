@@ -1,4 +1,6 @@
 using ClientNetforemost.Components;
+using ClientNetforemost.Servicios.Prioridad;
+using ClientNetforemost.Servicios.Tarea;
 using ClientNetforemost.Servicios.Usuario;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +10,8 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 builder.Services.AddHttpClient("WebApi", client => client.BaseAddress = new Uri("http://localhost:5043/api/"));
 builder.Services.AddScoped<IUsuarioServicio, UsuarioServicio>();
+builder.Services.AddScoped<IPrioridadService, PrioridadService>();
+builder.Services.AddScoped<ITareaServicio, TareaServicio>();
 
 var app = builder.Build();
 

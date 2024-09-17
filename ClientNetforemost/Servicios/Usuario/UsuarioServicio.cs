@@ -14,14 +14,20 @@ namespace ClientNetforemost.Servicios.Usuario
         {
             _httpClient = httpClient;
             _config = config;
-            _httpClient.BaseAddress = new Uri("http://localhost:5043/api/"); // Asegúrate de configurar la BaseAddress
+            _httpClient.BaseAddress = new Uri("http://localhost:5043/api/");
         }
 
         public async Task<List<Entidad.Usuario>> ObtenerUsuariosAsync()
         {
 
-            var apiKey = _config["ApiSettings:ApiKey"];
-            _httpClient.DefaultRequestHeaders.Add("x-api-key", apiKey);
+            var apiKey = _config
+                ["ApiSettings:ApiKey"];
+
+            if (!_httpClient.DefaultRequestHeaders.Contains("x-api-key"))
+            {
+                _httpClient.DefaultRequestHeaders.Add("x-api-key", apiKey);
+
+            }
             var response = await _httpClient.GetAsync("Usuarios");
             response.EnsureSuccessStatusCode();
 
@@ -36,7 +42,12 @@ namespace ClientNetforemost.Servicios.Usuario
 
             var apiKey = _config
                 ["ApiSettings:ApiKey"];
-            _httpClient.DefaultRequestHeaders.Add("x-api-key", apiKey);
+
+            if (!_httpClient.DefaultRequestHeaders.Contains("x-api-key"))
+            {
+                _httpClient.DefaultRequestHeaders.Add("x-api-key", apiKey);
+
+            }
             var response = await _httpClient.GetAsync($"Usuarios/{id}");
             response.EnsureSuccessStatusCode();
 
@@ -45,7 +56,7 @@ namespace ClientNetforemost.Servicios.Usuario
 
         }
 
-        public void EditarUsuario(Entidad.Usuario usuario)
+        public Task EditarUsuario(Entidad.Usuario usuario)
         {
             var apiKey = _config["ApiSettings:ApiKey"];
 
@@ -54,10 +65,33 @@ namespace ClientNetforemost.Servicios.Usuario
                 _httpClient.DefaultRequestHeaders.Add("x-api-key", apiKey);
             }
 
+            usuario.Tareas = [];
+
             var json = JsonConvert.SerializeObject(usuario);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
             _httpClient.PutAsync($"Usuarios/{usuario.Id}", data);
 
+            return Task.CompletedTask;
+        }
+
+        public Task CrearUsuario(Entidad.Usuario usuario)
+        {
+            var apiKey = _config
+                ["ApiSettings:ApiKey"];
+
+            if (!_httpClient.DefaultRequestHeaders.Contains("x-api-key"))
+            {
+                _httpClient.DefaultRequestHeaders.Add("x-api-key", apiKey);
+
+            }
+
+            usuario.Tareas = [];
+
+            var json = JsonConvert.SerializeObject(usuario);
+            var data = new StringContent(json, Encoding.UTF8, "application/json");
+            _httpClient.PostAsync("Usuarios", data);
+
+            return Task.CompletedTask;
         }
     }
 }

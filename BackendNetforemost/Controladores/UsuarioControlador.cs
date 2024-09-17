@@ -57,7 +57,7 @@ namespace BackendNetforemost.Controladores
         {
             _context.Usuarios.Add(usuario);
             await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetUsuarios), new { id = usuario.Id }, usuario);
+            return Ok();
         }
 
         [HttpPut("{id}")]
