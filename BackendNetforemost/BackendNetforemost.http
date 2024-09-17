@@ -1,0 +1,6 @@
+@BackendNetforemost_HostAddress = http://localhost:5043
+
+GET {{BackendNetforemost_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

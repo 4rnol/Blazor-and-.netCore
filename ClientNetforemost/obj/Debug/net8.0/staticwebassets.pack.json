@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\.net\\PruebaNetforemost\\ClientNetforemost\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ClientNetforemost.bundle.scp.css",
+      "PackagePath": "staticwebassets\\ClientNetforemost.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\.net\\PruebaNetforemost\\ClientNetforemost\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "D:\\.net\\PruebaNetforemost\\ClientNetforemost\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\.net\\PruebaNetforemost\\ClientNetforemost\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\.net\\PruebaNetforemost\\ClientNetforemost\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ClientNetforemost.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.ClientNetforemost.props",
+      "PackagePath": "build\\ClientNetforemost.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.ClientNetforemost.props",
+      "PackagePath": "buildMultiTargeting\\ClientNetforemost.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.ClientNetforemost.props",
+      "PackagePath": "buildTransitive\\ClientNetforemost.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
