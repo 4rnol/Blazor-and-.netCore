@@ -15,7 +15,7 @@ namespace ClientNetforemost.Servicios.Tarea
             _httpClient.BaseAddress = new Uri("http://localhost:5043/api/");
         }
 
-        public async Task EditarTarea(Entidad.Tarea tarea)
+        public Task EditarTarea(Entidad.Tarea tarea)
         {
             var apiKey = _config["ApiSettings:ApiKey"];
 
@@ -24,11 +24,13 @@ namespace ClientNetforemost.Servicios.Tarea
                 _httpClient.DefaultRequestHeaders.Add("x-api-key", apiKey);
             }
 
+            tarea.Usuario = null;
             var json = JsonConvert.SerializeObject(tarea);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
 
-            await _httpClient.PutAsync("Tarea", data);
+            _httpClient.PutAsync($"Tarea/{tarea.Id}", data);
 
+            return Task.CompletedTask;
         }
 
         public async Task CrearTarea(Entidad.Tarea tarea)

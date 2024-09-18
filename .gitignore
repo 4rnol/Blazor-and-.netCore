@@ -1,0 +1,71 @@
+*.suo
+*.backup
+*.user
+*.dbmdl
+*.pptx
+*.psess
+*.orig
+*.xml
+*.~vsd
+*.zip
+*.sublime-project
+*.sublime-workspace
+*.exe
+*.avi
+*.mp4
+*.mov
+*.rar
+*.mdf
+*.ldf
+**/nuspec.list
+**/packages/
+**/.sass-cache/
+**/node_modules/
+**/bower_components/
+*/Performance/*TestResults.txt
+**/bin
+**/obj
+**/*.log.1
+**/*.log.*
+*.log
+*.db
+# Ignore the .vs folder
+.vs/
+
+# Ignore bin and obj folders in specific projects
+BackendNetforemost/bin/
+BackendNetforemost/obj/
+ClientNetforemost/bin/
+ClientNetforemost/obj/
+Entities/bin/
+Entities/obj/
+TestUnitarios/bin/
+TestUnitarios/obj/
+
+# Prevent general exclusion of all bin and obj folders in the repository
+!**/bin/
+!**/obj/
+
+# Ignore Visual Studio temporary files, build results, and
+# user-specific files
+.vscode/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignore build directories
+**/bin/
+**/obj/
+
+# Ignore .NET Core local tools
+.local.toolset/
+
+# Ignore Rider/JetBrains specific files
+.idea/
+*.sln.iml
+
+# Ignore NuGet packages
+*.nupkg
+packages/

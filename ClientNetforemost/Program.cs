@@ -12,6 +12,7 @@ builder.Services.AddHttpClient("WebApi", client => client.BaseAddress = new Uri(
 builder.Services.AddScoped<IUsuarioServicio, UsuarioServicio>();
 builder.Services.AddScoped<IPrioridadService, PrioridadService>();
 builder.Services.AddScoped<ITareaServicio, TareaServicio>();
+builder.Services.AddBlazorBootstrap();
 
 var app = builder.Build();
 

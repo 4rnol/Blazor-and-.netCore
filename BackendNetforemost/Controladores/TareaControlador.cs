@@ -46,5 +46,20 @@ namespace BackendNetforemost.Controladores
             await _context.SaveChangesAsync();
             return Ok();
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateTarea(int id, Tarea tarea)
+        {
+            if (id != tarea.Id)
+                return BadRequest();
+
+            tarea.Updated_At = DateTime.Now;
+            _context.Entry(tarea).State = EntityState.Modified;
+            
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+
+        }
     }
 }

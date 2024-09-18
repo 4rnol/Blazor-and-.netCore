@@ -29,7 +29,6 @@ namespace BackendNetforemost.Controladores
         [Route("{id}")]
         public async Task<ActionResult<Usuario>> GetUsuario(int id)
         {
-            //get user including tasks
              Entidad.Usuario usuario = await _context.Usuarios
                 .Include(u => u.Tareas)
                 .FirstOrDefaultAsync(u => u.Id == id);
@@ -37,8 +36,7 @@ namespace BackendNetforemost.Controladores
             if (usuario == null)
                 return NotFound();
 
-            // Ordenar las tareas por fecha de vencimiento descendente
-            usuario.Tareas = usuario.Tareas.OrderBy(t => t.FechaVencimiento).ToList();
+            usuario.Tareas = usuario.Tareas.Where(t => t.Eliminado == false).OrderBy(t => t.FechaVencimiento).ToList();
 
 
 
